@@ -45,6 +45,8 @@ type Transaction struct {
 	Reference string
 	// Amount is the amount of money to be transferred.
 	Amount string
+	// Currency of the transaction (ex: "CHF").
+	Currency string
 }
 
 // Order represents one or more transactions of one debitor.

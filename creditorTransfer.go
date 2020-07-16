@@ -23,7 +23,7 @@ func NewCreditorTransferInformation(transaction Transaction, paymentNumber int) 
 		EndToEndId:    fmt.Sprintf("ENDTOENDID-%d", paymentNumber),
 		PaymentType:   "CH03",
 		Amount: Amount{
-			Currency: "CHF",
+			Currency: transaction.Currency,
 			Value:    transaction.Amount,
 		},
 		Address: Address{

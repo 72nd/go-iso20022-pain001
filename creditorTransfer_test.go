@@ -11,7 +11,7 @@ func TestNewCreditorTransferInformation(t *testing.T) {
 		Postcode:  1717,
 		Place:     "Steet Town",
 		Country:   "FN",
-		IBAN:      "FN56 0483 5012 3456 7800 9 ",
+		IBAN:      "FN56 0483 5012 3456 7800 9",
 		Reference: "statuary",
 		Amount:    "17.17",
 		Currency:  "CFN",

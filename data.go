@@ -9,7 +9,7 @@ type Debitor struct {
 	// StreetNr is the street number of the debitor.
 	StreetNr int
 	// Postecode of the debitor.
-	Postecode int
+	Postcode int
 	// Place name of the debitor.
 	Place string
 	// Country code of the debitor (ex.: "CH").
@@ -26,13 +26,24 @@ type Transaction struct {
 	Name string
 	// Street name of the creditor without the number.
 	Street string
-
+	// StreetNr is the street number of the creditor.
+	StreetNr int
+	// Postecode of the creditor.
+	Postecode int
+	// Place name of the creditor.
+	Place string
+	// Country code of the creditor (ex.: "CH").
+	Country string
+	// IBAN code of the creditors bank account.
+	IBAN string
 	// Reference is the comment/description the creditor will see upon receiving the transaction.
 	Reference string
 }
 
 // Order represents one or more transactions of one debitor.
 type Order struct {
+	// ExecuteOn states the date of execution in the `YYYY-MM-DD` format
+	ExecuteOn string
 	// Debitor the payee of the transactions.
 	Debitor Debitor
 	// Transactions the payments to be generated.
@@ -40,6 +51,13 @@ type Order struct {
 }
 
 // PaymentOrder returns the ISO 20022 Pain.001 XML represenation of the order as a string.
-func (o Order) PaymentOrder() string {
-	return string
+func (o Order) PaymentOrder() (string, error) {
+	// TODO
+	return "", nil
+}
+
+// TransactionSum returns the total amount of all transactions as a string formatted floating point number.
+func (o Order) TransactionSum() string {
+	// TODO
+	return ""
 }

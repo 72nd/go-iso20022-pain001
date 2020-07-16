@@ -1,10 +1,10 @@
 # golang Swiss ISO 20022 Pain.001 payment order library [![GoDoc](https://godoc.org/github.com/72nd/go-iso20022-pain001?status.svg)](https://godoc.org/github.com/72nd/go-iso20022-pain001)
 
-**Remark:** This code is extracted from another project of mine and fulfills _our_ ([Genossenschaft Solutionsbüro](https://buero.io)) daily needs of automated payment order generation. It does _not_ implement the whole specification of the [Swiss standard](https://www.six-group.com/interbank-clearing/dam/downloads/en/standardization/iso/swiss-recommendations/implementation-guidelines-ct.pdf). Further there is no safety net whatsoever. This comes without warranty of any kind. As this is about your money, think first. 
+**Remark:** This code is extracted from another project of mine and fulfills _our_ ([Genossenschaft Solutionsbüro](https://buero.io)) daily needs of automated payment order generation. It does _not_ implement the whole specification of the [Swiss standard](https://www.six-group.com/dam/download/banking-services/interbank-clearing/en/standardization/iso/swiss-recommendations/implementation-guidelines-ct.pdf). Further there is no safety net whatsoever. This comes without warranty of any kind. As this is about your money, think first. 
 
 ## Usage
 
-A simple example which should illustrate the way of working with the library. For more information about some data format (like date, country-codes or currency-codes) please refer to the [documentation](https://godoc.org/github.com/72nd/go-iso20022-pain001) or the [offical implementation guidelines](https://www.six-group.com/interbank-clearing/dam/downloads/en/standardization/iso/swiss-recommendations/implementation-guidelines-ct.pdf).
+A simple example which should illustrate the way of working with the library. For more information about some data format (like date, country-codes or currency-codes) please refer to the [documentation](https://godoc.org/github.com/72nd/go-iso20022-pain001) or the [offical implementation guidelines](https://www.six-group.com/dam/download/banking-services/interbank-clearing/en/standardization/iso/swiss-recommendations/implementation-guidelines-ct.pdf).
 
 ```golang
 // Define the debitor (aka originator) of the transactions.

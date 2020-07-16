@@ -17,7 +17,7 @@ type CreditorTransferInformation struct {
 }
 
 // NewCreditorTransferInformation returns a new CreditorTransferInformation. Needs to know, which number of payment it is.
-func NewCreditorTransferInformation(transaction convert.Transaction, paymentNumber int) CreditorTransferInformation {
+func NewCreditorTransferInformation(transaction Transaction, paymentNumber int) CreditorTransferInformation {
 	return CreditorTransferInformation{
 		InstructionId: fmt.Sprintf("INSTRID-01-%d", paymentNumber),
 		EndToEndId:    fmt.Sprintf("ENDTOENDID-%d", paymentNumber),
@@ -30,13 +30,13 @@ func NewCreditorTransferInformation(transaction convert.Transaction, paymentNumb
 			Name: transaction.Name,
 			PostalAddress: PostalAddress{
 				StreetName:   transaction.Street,
-				StreetNumber: transaction.Nr,
+				StreetNumber: transaction.StreetNr,
 				PostalCode:   transaction.Postcode,
 				TownName:     transaction.Place,
 				Country:      transaction.Country,
 			},
 		},
-		Iban:      strings.Replace(transaction.Iban, " ", "", -1),
+		Iban:      strings.Replace(transaction.IBAN, " ", "", -1),
 		Reference: transaction.Reference,
 	}
 }

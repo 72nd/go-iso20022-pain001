@@ -15,7 +15,7 @@ type CustomerCreditTransferInitiation struct {
 // of all transactions and returns a CustomerCreditTransferInitiation.
 func NewCustomerCreditTransferInitiation(order Order) CustomerCreditTransferInitiation {
 	return CustomerCreditTransferInitiation{
-		GroupHeader: NewGroupHeader(order.Debitor.Name, len(order.Transactions), trnSum),
-		PaymentInformation: NewPaymentInformation(debitor),
+		GroupHeader: NewGroupHeader(order.Debitor.Name, len(order.Transactions), order.transactionSum()),
+		PaymentInformation: NewPaymentInformation(order),
 	}
 }

@@ -29,7 +29,7 @@ type Transaction struct {
 	// StreetNr is the street number of the creditor.
 	StreetNr int
 	// Postecode of the creditor.
-	Postecode int
+	Postcode int
 	// Place name of the creditor.
 	Place string
 	// Country code of the creditor (ex.: "CH").
@@ -38,6 +38,8 @@ type Transaction struct {
 	IBAN string
 	// Reference is the comment/description the creditor will see upon receiving the transaction.
 	Reference string
+	// Amount is the amount of money to be transferred.
+	Amount string
 }
 
 // Order represents one or more transactions of one debitor.
@@ -57,7 +59,7 @@ func (o Order) PaymentOrder() (string, error) {
 }
 
 // TransactionSum returns the total amount of all transactions as a string formatted floating point number.
-func (o Order) TransactionSum() string {
+func (o Order) transactionSum() string {
 	// TODO
 	return ""
 }

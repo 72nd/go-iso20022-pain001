@@ -2,8 +2,6 @@ package pain001
 
 import (
 	"encoding/xml"
-	"fmt"
-	"io/ioutil"
 )
 
 // DateTimeFormat represents the date and time format which is used in the standard.
@@ -19,12 +17,12 @@ type Document struct {
 }
 
 // NewDocument returns a new document.
-func NewDocument(data convert.Data) Document {
+func NewDocument(order Order) Document {
 	document := Document{
 		Xmlns:                            "http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd",
 		XmlnsXid:                         "http://www.w3.org/2001/XMLSchema-instance",
 		XsiSchemaLocation:                "http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd  pain.001.001.03.ch.02.xsd",
-		CustomerCreditTransferInitiation: NewCustomerCreditTransferInitiation(data),
+		CustomerCreditTransferInitiation: NewCustomerCreditTransferInitiation(order),
 	}
 	return document
 }

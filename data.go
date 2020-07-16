@@ -1,5 +1,10 @@
 package pain001
 
+import (
+	"fmt"
+	"strconv"
+)
+
 // Debitor represents the payee (aka originator) of a transaction.
 type Debitor struct {
 	// Name of the debitor. Full name or company name.
@@ -52,14 +57,28 @@ type Order struct {
 	Transactions []Transaction
 }
 
-// PaymentOrder returns the ISO 20022 Pain.001 XML represenation of the order as a string.
-func (o Order) PaymentOrder() (string, error) {
-	// TODO
-	return "", nil
+// PaymentOrder returns the ISO 20022 Pain.001 XML represenation of the order.
+func (o Order) PaymentOrder() ([]byte, error) {
+	doc, err := NewDocument(o)
+	if err != nil {
+		return []byte{}, err
+	}
+	data, err := doc.toXml()
+	if err != nil {
+		return []byte{}, err
+	}
+	return data, nil
 }
 
 // TransactionSum returns the total amount of all transactions as a string formatted floating point number.
-func (o Order) transactionSum() string {
-	// TODO
-	return ""
+func (o Order) transactionSum() (string, error) {
+	sum := 0.0
+	for i := range o.Transactions {
+		val, err := strconv.ParseFloat(o.Transactions[i].Amount, 64)
+		if err != nil {
+			return "", fmt.Errorf("error converting \"%s\" (amount of transaction \"%s\") to float", o.Transactions[i].Amount, o.Transactions[i].Reference)
+		}
+		sum += val
+	}
+	return fmt.Sprintf("%.2f", sum), nil
 }

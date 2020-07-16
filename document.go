@@ -17,13 +17,25 @@ type Document struct {
 }
 
 // NewDocument returns a new document.
-func NewDocument(order Order) Document {
+func NewDocument(order Order) (Document, error) {
+	initation, err := NewCustomerCreditTransferInitiation(order)
+	if err != nil {
+		return Document{}, err
+	}
 	document := Document{
 		Xmlns:                            "http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd",
 		XmlnsXid:                         "http://www.w3.org/2001/XMLSchema-instance",
 		XsiSchemaLocation:                "http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd  pain.001.001.03.ch.02.xsd",
-		CustomerCreditTransferInitiation: NewCustomerCreditTransferInitiation(order),
+		CustomerCreditTransferInitiation: initation,
 	}
-	return document
+	return document, nil
 }
 
+// toXml returns the document as XML.
+func (d Document) toXml() ([]byte, error) {
+	out, err := xml.MarshalIndent(d,  "  ", "    ")
+	if err != nil {
+		return []byte{}, err
+	}
+	return out, nil
+}

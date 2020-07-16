@@ -1,3 +1,5 @@
+// Package pain001 can generate Swiss ISO 20022 Pain.001 payment orders.
+// This library does _not_ implement the whole specification. Use this at your own risk.
 package pain001
 
 import (

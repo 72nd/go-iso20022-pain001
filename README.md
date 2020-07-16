@@ -55,6 +55,8 @@ if err := ioutil.WriteFile("payment-order.xml", xml, 0644); err != nil {
 
 ## Sample Output
 
+Example of a output file:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Document xmlns="http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.six-interbank-clearing.com/de/pain.001.001.03.ch.02.xsd  pain.001.001.03.ch.02.xsd">

@@ -62,12 +62,12 @@ type Order struct {
 }
 
 // PaymentOrder returns the ISO 20022 Pain.001 XML representation of the order.
-func (o Order) PaymentOrder() ([]byte, error) {
+func (o Order) PaymentOrder(indent bool) ([]byte, error) {
 	doc, err := NewDocument(o)
 	if err != nil {
 		return []byte{}, err
 	}
-	data, err := doc.toXml()
+	data, err := doc.toXml(indent)
 	if err != nil {
 		return []byte{}, err
 	}

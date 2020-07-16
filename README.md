@@ -1,4 +1,4 @@
-# golang Swiss ISO 20022 Pain.001 payment order library [![GoDoc](https://godoc.org/github.com/72nd/go-iso20022-pain001?status.svg)](https://godoc.org/github.com/72nd/go-iso20022-pain001)
+# golang Swiss ISO 20022 Pain.001 payment order library [![GoDoc](https://godoc.org/github.com/72nd/go-iso20022-pain001?status.svg)](https://godoc.org/github.com/72nd/go-iso20022-pain001) [![Go Report Card](https://goreportcard.com/badge/github.com/72nd/go-iso20022-pain001)](https://goreportcard.com/report/github.com/72nd/go-iso20022-pain001) 
 
 **Remark:** This code is extracted from another project of mine and fulfills _our_ ([Genossenschaft Solutionsbüro](https://buero.io)) daily needs of automated payment order generation. It does _not_ implement the whole specification of the [Swiss standard](https://www.six-group.com/dam/download/banking-services/interbank-clearing/en/standardization/iso/swiss-recommendations/implementation-guidelines-ct.pdf). Further there is no safety net whatsoever. This comes without warranty of any kind. As this is about your money, think first. 
 

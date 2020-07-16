@@ -32,8 +32,15 @@ func NewDocument(order Order) (Document, error) {
 }
 
 // toXml returns the document as XML.
-func (d Document) toXml() ([]byte, error) {
-	out, err := xml.MarshalIndent(d, "  ", "    ")
+func (d Document) toXml(indent bool) ([]byte, error) {
+	var out []byte
+	var err error
+	if indent {
+		out, err = xml.MarshalIndent(d, "  ", "    ")
+	} else {
+		out, err = xml.Marshal(d)
+	}
+
 	if err != nil {
 		return []byte{}, err
 	}

@@ -6,6 +6,11 @@ import (
 )
 
 func TestNewGroupHeader(t *testing.T) {
+	expected := `<GroupHeader><MsgId>d08de8c4-0fe8-4bcd</MsgId><CreDtTm>2020-07-16T22:40:51</CreDtTm><NbOfTxs>1</NbOfTxs><CtrlSum>23.50</CtrlSum><InitgPty><Nm>George Goodman</Nm></InitgPty></GroupHeader>`
+	data := NewGroupHeader("George Goodman", 1, "23.50")
+	data.MessageIdentification = "d08de8c4-0fe8-4bcd"
+	data.CreationDateTime = "2020-07-16T22:40:51"
+	compareXmlResult(t, data, expected)
 }
 
 func TestGetShortId(t *testing.T) {

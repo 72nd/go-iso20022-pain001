@@ -39,7 +39,7 @@ func NewPaymentInformation(order Order) PaymentInformation {
 
 	info.CreditorTransferInformation = make([]CreditorTransferInformation, len(order.Transactions))
 	for i := range order.Transactions {
-		info.CreditorTransferInformation[i] = NewCreditorTransferInformation(order.Transactions[i], i+1, order.Currency)
+		info.CreditorTransferInformation[i] = NewCreditorTransferInformation(order.Transactions[i], i+1)
 	}
 	return info
 }

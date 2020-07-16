@@ -4,7 +4,7 @@
 
 ## Usage
 
-A simple example which should illustrate the way of working with the library. For more information about some data format (like date, country-codes or currency-codes) please refer to the [documentation]() or the [offical implementation guidelines](https://www.six-group.com/interbank-clearing/dam/downloads/en/standardization/iso/swiss-recommendations/implementation-guidelines-ct.pdf).
+A simple example which should illustrate the way of working with the library. For more information about some data format (like date, country-codes or currency-codes) please refer to the [documentation](https://godoc.org/github.com/72nd/go-iso20022-pain001) or the [offical implementation guidelines](https://www.six-group.com/interbank-clearing/dam/downloads/en/standardization/iso/swiss-recommendations/implementation-guidelines-ct.pdf).
 
 ```golang
 // Define the debitor (aka originator) of the transactions.

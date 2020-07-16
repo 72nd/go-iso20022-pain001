@@ -61,7 +61,7 @@ type Order struct {
 	Transactions []Transaction
 }
 
-// PaymentOrder returns the ISO 20022 Pain.001 XML represenation of the order.
+// PaymentOrder returns the ISO 20022 Pain.001 XML representation of the order.
 func (o Order) PaymentOrder() ([]byte, error) {
 	doc, err := NewDocument(o)
 	if err != nil {

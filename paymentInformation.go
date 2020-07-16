@@ -6,13 +6,13 @@ import (
 
 // PaymentInformation contains most of the payment information. For more information please refer to the standard.
 type PaymentInformation struct {
-	PaymentInformationId         string                        `xml:"PmtInfId"`
-	PaymentMethod                string                        `xml:"PmtMtd"`
-	BatchBooking                 bool                          `xml:"BtchBookg"`
-	RequiredExecutionDate        string                        `xml:"ReqdExctnDt"`
-	Debitor                      Address                       `xml:"Dbtr"`
-	DebitorIban                  string                        `xml:"DbtrAcct>Id>IBAN"`
-	DebitorBic                   string                        `xml:"DbtrAgt>FinInstnId>BIC"`
+	PaymentInformationId        string                        `xml:"PmtInfId"`
+	PaymentMethod               string                        `xml:"PmtMtd"`
+	BatchBooking                bool                          `xml:"BtchBookg"`
+	RequiredExecutionDate       string                        `xml:"ReqdExctnDt"`
+	Debitor                     Address                       `xml:"Dbtr"`
+	DebitorIban                 string                        `xml:"DbtrAcct>Id>IBAN"`
+	DebitorBic                  string                        `xml:"DbtrAgt>FinInstnId>BIC"`
 	CreditorTransferInformation []CreditorTransferInformation `xml:"CdtTrfTxInf"`
 }
 

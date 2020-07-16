@@ -19,7 +19,7 @@ func NewCustomerCreditTransferInitiation(order Order) (CustomerCreditTransferIni
 		return CustomerCreditTransferInitiation{}, err
 	}
 	return CustomerCreditTransferInitiation{
-		GroupHeader: NewGroupHeader(order.Debitor.Name, len(order.Transactions), sum),
+		GroupHeader:        NewGroupHeader(order.Debitor.Name, len(order.Transactions), sum),
 		PaymentInformation: NewPaymentInformation(order),
 	}, nil
 }

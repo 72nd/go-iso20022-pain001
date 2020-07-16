@@ -41,6 +41,7 @@ func NewCreditorTransferInformation(transaction Transaction, paymentNumber int) 
 	}
 }
 
+// Amount represents a amount of money with a currency.
 type Amount struct {
 	Currency string `xml:"Ccy,attr"`
 	Value    string `xml:",chardata"`
